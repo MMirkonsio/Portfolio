@@ -1,6 +1,6 @@
 import { Dialog } from "primereact/dialog";
 import { Button } from "primereact/button";
-
+import "../App.css"
 import { useState } from "react";
 import "primeicons/primeicons.css";
 import columnData from "../Components/ColumnData";
@@ -29,9 +29,10 @@ const Projects = () => {
 
   return (
     <div
-      className={`flex justify-center ${
+      className={`flex justify-center items-center ${
         blurBackground ? "blur-background" : ""
       }`}
+      style={{ marginTop: "calc(3.9rem + 1px)" }}
     >
       <div className="grid lg:auto-rows-[190px] auto-rows-[250px] contenedor-grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-2 p-4">
         {columnData.map((data, i) => (
@@ -73,8 +74,9 @@ const Projects = () => {
                 onHide={() => closeModal(i)}
                 modal
                 showHeader={false}
+                className="dialog-modal"
               >
-                <div className="contenedor-model  mx-auto rounded-xl border-2 border-slate-400/20  dm-sans">
+                <div className="contenedor-model mx-auto relative bg-gray-100 dark:bg-neutral-900  rounded-xl border-2 border-slate-400/20  dm-sans">
                   {data.imageUrl && (
                     <img
                       src={data.imageUrl}
@@ -82,12 +84,12 @@ const Projects = () => {
                       className="foto-model lg:rounded-l-lg  object-cover transition-all duration-300"
                     />
                   )}
-                  <div className=" dark:bg-neutral-900 lg:rounded-r-lg  relative">
+                  <div className=" dark:bg-neutral-900 lg:rounded-r-lg ">
                     {data.title && (
                       <h2 className="text-4xl font-bold ">{data.title}</h2>
                     )}
                     {data.description && (
-                      <div className="-gray-100 h-4/5 dark:bgbg-neutral-900 lg:rounded-r-lg relative">
+                      <div className="h-4/5 dark:bg-neutral-900 lg:rounded-r-lg relative">
                         {data.title && (
                           <h2 className="text-4xl font-bold">{data.title}</h2>
                         )}

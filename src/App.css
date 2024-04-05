@@ -137,6 +137,7 @@ body {
 }
 @media screen and (max-width: 480px) {
   .contenedor-model {
+    
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -169,7 +170,6 @@ body {
 
 .blur-background {
   filter: blur(3px); /* Ajusta el valor de desenfoque según tus preferencias */
-  opacity: 0%;
 }
 
 
@@ -183,4 +183,8 @@ body {
    font-size: 14px;
    position: absolute;
    top: 20px;
+}
+
+.index-navbar {
+  z-index: 99999;
 }
