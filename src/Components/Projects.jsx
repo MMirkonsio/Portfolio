@@ -1,23 +1,22 @@
 import { Dialog } from "primereact/dialog";
 import { Button } from "primereact/button";
-import "../App.css"
+import "../App.css";
 import { useState } from "react";
 import "primeicons/primeicons.css";
 import columnData from "../Components/ColumnData";
 
 const Projects = () => {
-  // Objeto para almacenar el estado de visibilidad de cada modal
-  const [modalVisibility, setModalVisibility] = useState({});
+  const [activeDialogIndex, setActiveDialogIndex] = useState(null);
   const [blurBackground, setBlurBackground] = useState(false);
 
   const openModal = (index) => {
-    setModalVisibility({ ...modalVisibility, [index]: true });
-    setBlurBackground(true); // Aplicar desenfoque al fondo
+    setActiveDialogIndex(index);
+    setBlurBackground(true);
   };
 
-  const closeModal = (index) => {
-    setModalVisibility({ ...modalVisibility, [index]: false });
-    setBlurBackground(false); // Quitar desenfoque al fondo
+  const closeModal = () => {
+    setActiveDialogIndex(null);
+    setBlurBackground(false);
   };
 
   const handleDownloadPDF = () => {
@@ -40,7 +39,11 @@ const Projects = () => {
             key={i}
             className={`project-container row-span-1 rounded-xl border-2 border-slate-400/10 bg-neutral-100 dark:bg-neutral-900 ${
               i === 3 || i === 6 ? "lg:col-span-2 col-span-1 " : ""
-            } ${data.columnClass} ${data.hasImage ? "cursor-pointer" : ""}`}
+            } ${data.columnClass} ${
+              activeDialogIndex !== null && activeDialogIndex !== i
+                ? "hidden"
+                : ""
+            } ${data.hasImage ? "cursor-pointer" : ""}`}
             onClick={() => data.hasImage && openModal(i)}
           >
             <h2 className="font-bold dark:text-gray-100 text-neutral-800">
@@ -70,8 +73,8 @@ const Projects = () => {
             data.hasImage && (
               <Dialog
                 key={i}
-                visible={modalVisibility[i] || false}
-                onHide={() => closeModal(i)}
+                visible={activeDialogIndex === i}
+                onHide={closeModal}
                 modal
                 showHeader={false}
                 className="dialog-modal"
@@ -89,7 +92,7 @@ const Projects = () => {
                       <h2 className="text-4xl font-bold ">{data.title}</h2>
                     )}
                     {data.description && (
-                      <div className="h-4/5 dark:bg-neutral-900 lg:rounded-r-lg relative">
+                      <div className="dark:bg-neutral-900 lg:rounded-r-lg">
                         {data.title && (
                           <h2 className="text-4xl font-bold">{data.title}</h2>
                         )}
@@ -103,17 +106,17 @@ const Projects = () => {
                       </div>
                     )}
 
-                    <div className="flex items-center justify-center gap-20 mt-6  dark:text-neutral-100 text-neutral-900">
+                    <div className="flex items-center justify-center gap-20 mb-4 mt-4 dark:text-neutral-100 text-neutral-900">
                       {data.link && (
                         <Button
-                          icon="pi pi-external-link" // Clase del icono que proporciona PrimeReact
+                          icon="pi pi-external-link"
                           className="text-2xl p-button-rounded p-button-text p-button-sm  p-2 "
                           onClick={() => window.open(data.link, "_blank")}
                         />
                       )}
                       {data.link2 && (
                         <Button
-                          icon="pi pi-code" // Clase del icono que proporciona PrimeReact
+                          icon="pi pi-code"
                           className="text-2xl p-button-rounded p-button-text p-button-sm  p-2 "
                           onClick={() => window.open(data.link2, "_blank")}
                         />
@@ -121,7 +124,7 @@ const Projects = () => {
                       {data.experience && (
                         <Button
                           className="p-button-text p-button-sm  block p-2 ml-2  bg-neutral-800 rounded-lg text-neutral-100 "
-                          onClick={() => handleDownloadPDF(data)} // Cambiar columnData[0] a data
+                          onClick={() => handleDownloadPDF(data)}
                         >
                           <i className="pi pi-download mr-2"></i>
                           <span>Descargar CV</span>
@@ -131,7 +134,7 @@ const Projects = () => {
                       <Button
                         icon="pi pi-times"
                         className="p-button-rounded p-button-text p-button-sm  p-2 text-2xl"
-                        onClick={() => closeModal(i)}
+                        onClick={closeModal}
                       />
                     </div>
                   </div>

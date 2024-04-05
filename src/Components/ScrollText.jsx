@@ -24,7 +24,7 @@ const ScrollText = () => {
   }, []);
 
   return (
-    <div className="scroller">
+    <div className="scroller lg:mt-96">
       <ul className="scroller-inner font-medium italic  border-t-2 border-slate-400/10 bg-neutral-100  dark:bg-neutral-900 dark:text-gray-100">
         <li className="flex flex-row gap-1">
           <img src="../images/html.png" alt="HTML" />

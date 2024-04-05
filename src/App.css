@@ -169,13 +169,13 @@ body {
 }
 
 .blur-background {
-  filter: blur(3px); /* Ajusta el valor de desenfoque según tus preferencias */
+  opacity: 0%;
 }
 
 
 .gmail-overlay-panel {
   position: absolute!important;
-  left: 57.5%!important; /* Ajusta la posición horizontal */
+  left: 57.5%!important; 
 }
 
 .my-classname{
