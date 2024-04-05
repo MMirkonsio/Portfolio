@@ -74,7 +74,7 @@ const Projects = () => {
                 modal
                 showHeader={false}
               >
-                <div className="contenedor-model mx-auto rounded-xl dm-sans">
+                <div className="contenedor-model  mx-auto rounded-xl border-2 border-slate-400/20  dm-sans">
                   {data.imageUrl && (
                     <img
                       src={data.imageUrl}
@@ -82,20 +82,16 @@ const Projects = () => {
                       className="foto-model lg:rounded-l-lg  object-cover transition-all duration-300"
                     />
                   )}
-                  <div className="bg-neutral-900  dark:bg-gray-100 lg:rounded-r-lg relative">
+                  <div className=" dark:bg-neutral-900 lg:rounded-r-lg  relative">
                     {data.title && (
-                      <h2 className="text-4xl font-bold  text-neutral-100 dark:text-neutral-900">
-                        {data.title}
-                      </h2>
+                      <h2 className="text-4xl font-bold ">{data.title}</h2>
                     )}
                     {data.description && (
-                      <div className="bg-neutral-900 h-4/5 dark:bg-gray-100 lg:rounded-r-lg relative">
+                      <div className="-gray-100 h-4/5 dark:bgbg-neutral-900 lg:rounded-r-lg relative">
                         {data.title && (
-                          <h2 className="text-4xl font-bold text-neutral-100 dark:text-neutral-900">
-                            {data.title}
-                          </h2>
+                          <h2 className="text-4xl font-bold">{data.title}</h2>
                         )}
-                        <div className="text-base text-justify flex lg:h-4/5 text-neutral-100 dark:text-neutral-900 p-2">
+                        <div className="text-base text-justify flex lg:h-4/5 dark:text-neutral-100 text-neutral-900 p-2">
                           {data.description}
                           <br />
                           {data.description2}
@@ -105,24 +101,24 @@ const Projects = () => {
                       </div>
                     )}
 
-                    <div className="flex items-center justify-between  text-neutral-100 dark:text-neutral-900">
+                    <div className="flex items-center justify-center gap-20 mt-6  dark:text-neutral-100 text-neutral-900">
                       {data.link && (
                         <Button
                           icon="pi pi-external-link" // Clase del icono que proporciona PrimeReact
-                          className="text-2xl p-button-rounded p-button-text p-button-sm mt-4 p-2 "
+                          className="text-2xl p-button-rounded p-button-text p-button-sm  p-2 "
                           onClick={() => window.open(data.link, "_blank")}
                         />
                       )}
                       {data.link2 && (
                         <Button
                           icon="pi pi-code" // Clase del icono que proporciona PrimeReact
-                          className="text-2xl p-button-rounded p-button-text p-button-sm mt-4 p-2 "
+                          className="text-2xl p-button-rounded p-button-text p-button-sm  p-2 "
                           onClick={() => window.open(data.link2, "_blank")}
                         />
                       )}
                       {data.experience && (
                         <Button
-                          className="p-button-text p-button-sm mt-4 block p-2 ml-2  bg-neutral-800 rounded-lg text-neutral-100 "
+                          className="p-button-text p-button-sm  block p-2 ml-2  bg-neutral-800 rounded-lg text-neutral-100 "
                           onClick={() => handleDownloadPDF(data)} // Cambiar columnData[0] a data
                         >
                           <i className="pi pi-download mr-2"></i>
@@ -132,7 +128,7 @@ const Projects = () => {
 
                       <Button
                         icon="pi pi-times"
-                        className="p-button-rounded p-button-text p-button-sm mt-4 p-2 text-2xl"
+                        className="p-button-rounded p-button-text p-button-sm  p-2 text-2xl"
                         onClick={() => closeModal(i)}
                       />
                     </div>
