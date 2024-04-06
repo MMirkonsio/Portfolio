@@ -21,7 +21,7 @@ const Projects = () => {
 
   const handleDownloadPDF = () => {
     const link = document.createElement("a");
-    link.href = "/Curriculumvitae2024.pdf"; // Usar una ruta absoluta que sea válida en producción
+    link.href = "./Curriculumvitae2024.pdf"; // Usar una ruta absoluta que sea válida en producción
     link.download = "Curriculumvitae2024.pdf";
     link.click();
   };
