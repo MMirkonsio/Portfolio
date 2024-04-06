@@ -124,7 +124,7 @@ const Projects = () => {
                       {data.experience && (
                         <Button
                           className="p-button-text p-button-sm  block p-2 ml-2  bg-neutral-800 rounded-lg text-neutral-100 "
-                          onClick={() => handleDownloadPDF(data)}
+                          onClick={() => handleDownloadPDF(columnData[0])}
                         >
                           <i className="pi pi-download mr-2"></i>
                           <span>Descargar CV</span>
