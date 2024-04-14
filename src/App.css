@@ -8,6 +8,7 @@ body {
     left: 0%;
     right: 0%;
     z-index: -20;
+    font-family: "Reddit Mono", monospace;
 	
   }
 .dark  body {
@@ -18,8 +19,9 @@ body {
   filter: #404040;
 }
 
-.dm-sans {
+@font-face {
     font-family: "Reddit Mono", monospace;
+    src: url('/public/static/RedditMono-Regular.ttf') format('truetype');
     font-optical-sizing: auto;
     font-weight: weight;
     font-style: normal;
