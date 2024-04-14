@@ -1,5 +1,5 @@
 export const Github = () => (
-  <a href="https://github.com/MMirkonsio">
+  <a href="https://github.com/MMirkonsio" aria-label="Enlace a mi perfil de Github">
     <svg
       className="cursor-pointer transform transition-transform hover:scale-105  dark:invert"
       height="24"
@@ -27,7 +27,7 @@ export const Github = () => (
 );
 
 export const Linkedin = () => (
-  <a href="https://www.linkedin.com/in/mirko-valencia-92a811205/">
+  <a href="https://www.linkedin.com/in/mirko-valencia-92a811205/" aria-label="Enlace a mi perfil de Linkedin">
     <svg
       className="cursor-pointer transform transition-transform hover:scale-105  dark:invert "
       height="24"

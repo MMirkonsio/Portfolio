@@ -27,62 +27,62 @@ const ScrollText = () => {
     <div className="scroller lg:mt-96">
       <ul className="scroller-inner font-medium italic  border-t-2 border-slate-400/10 bg-neutral-100  dark:bg-neutral-900 dark:text-gray-100">
         <li className="flex flex-row gap-1">
-          <img src="../images/html.png" alt="HTML" />
+          <img src="../images/html.png" alt="Logo HTML" />
           HTML
         </li>
         <li>/</li>
         <li className="flex flex-row gap-1">
-          <img src="../images/django.png" alt="DJANGO" />
+          <img src="../images/django.png" alt="Logo DJANGO" />
           DJANGO
         </li>
         <li>/</li>
         <li className="flex flex-row gap-1">
-          <img src="../images/php.png" alt="PHP" />
+          <img src="../images/php.png" alt="Logo PHP" />
           PHP
         </li>
         <li>/</li>
         <li className="flex flex-row gap-1">
-          <img src="../images/react.png" alt="REACT" />
+          <img src="../images/react.png" alt="Logo REACT" />
           REACT
         </li>
         <li>/</li>
         <li className="flex flex-row gap-1">
-          <img src="../images/bootstrap.png" alt="BOOTSTRAP" />
+          <img src="../images/bootstrap.png" alt="Logo BOOTSTRAP" />
           BOOTSTRAP
         </li>
         <li>/</li>
         <li className="flex flex-row gap-1">
-          <img src="../images/mysql.png" alt="MYSQL" />
+          <img src="../images/mysql.png" alt="Logo MYSQL" />
           MYSQL
         </li>
         <li>/</li>
         <li className="flex flex-row gap-1">
-          <img src="../images/html.png" alt="HTML" />
+          <img src="../images/html.png" alt="Logo HTML" />
           HTML
         </li>
         <li>/</li>
         <li className="flex flex-row gap-1">
-          <img src="../images/django.png" alt="DJANGO" />
+          <img src="../images/django.png" alt="Logo DJANGO" />
           DJANGO
         </li>
         <li>/</li>
         <li className="flex flex-row gap-1">
-          <img src="../images/php.png" alt="PHP" />
+          <img src="../images/php.png" alt="Logo PHP" />
           PHP
         </li>
         <li>/</li>
         <li className="flex flex-row gap-1">
-          <img src="../images/react.png" alt="REACT" />
+          <img src="../images/react.png" alt="Logo REACT" />
           REACT
         </li>
         <li>/</li>
         <li className="flex flex-row gap-1">
-          <img src="../images/bootstrap.png" alt="BOOTSTRAP" />
+          <img src="../images/bootstrap.png" alt="Logo BOOTSTRAP" />
           BOOTSTRAP
         </li>
         <li>/</li>
         <li className="flex flex-row gap-1">
-          <img src="../images/mysql.png" alt="MYSQL" />
+          <img src="../images/mysql.png" alt="Logo MYSQL" />
           MYSQL
         </li>
         <li>/</li>

@@ -22,6 +22,7 @@ function Darkmode() {
   return (
     <div className="flex justify-left items-center dark:bg-rincon relative">
       <button
+        aria-label="Mode"
         className="px-4 py-2 rounded dark:bg-rincon dark:text-gray-100 "
         onClick={handleChangeTheme}
       >

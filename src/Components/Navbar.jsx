@@ -23,7 +23,8 @@ const Navbar = () => {
         <Github title="Github" />
         {/* Contenedor para los iconos y el botón de Gmail */}
         <div className="flex items-center">
-          <button onClick={handleClickGmail}>
+          {/* Añadir un aria-label al botón de Gmail para hacerlo más accesible */}
+          <button onClick={handleClickGmail} aria-label="Copiar correo electrónico">
             <Gmail />
           </button>
           {/* Componente Toastify para mostrar las notificaciones */}
