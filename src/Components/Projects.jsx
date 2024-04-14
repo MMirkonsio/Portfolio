@@ -8,6 +8,7 @@ import columnData from "../Components/ColumnData";
 const Projects = () => {
   const [activeDialogIndex, setActiveDialogIndex] = useState(null);
   const [blurBackground, setBlurBackground] = useState(false);
+  
 
   const openModal = (index) => {
     setActiveDialogIndex(index);

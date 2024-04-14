@@ -1,7 +1,7 @@
 // Datos para cada columna del grid
 const columnData = [
   {
-    imageUrl: "../images/proyecto1.webp",
+    imageUrl: "../images/proyecto11.webp",
     hasImage: true,
     description2:
       "Cuenta con un sistema de votacion y publicación inspirado en el sitio web Reddit, Ranking de publicaciones mas populares, Comentarios en cada publicacion, y Categorias de todos los productos.",
@@ -12,7 +12,7 @@ const columnData = [
     columnClass: "cursor-pointer",
   },
   {
-    imageUrl: "../images/proyecto2.webp",
+    imageUrl: "../images/proyecto22.webp",
     hasImage: true,
     description:
       "Juego de piedra, papel y tijera dedicado al entretenimiento ya sea para retos grupales, juntas sociales, etc...",
@@ -23,7 +23,7 @@ const columnData = [
     columnClass: "cursor-pointer",
   },
   {
-    imageUrl: "../images/noproject.jpg",
+    imageUrl: "../images/noproject.webp",
     hasImage: true,
     description: "Descripción de la imagen 3",
     columnClass: "cursor-pointer",
@@ -34,7 +34,7 @@ const columnData = [
     columnClass: "text-6xl p-1 break-words lg:tracking-wide",
   },
   {
-    imageUrl: "../images/noproject.jpg",
+    imageUrl: "../images/noproject.webp",
     hasImage: true,
     description: "Descripción de la imagen 4",
     columnClass: "cursor-pointer",

@@ -1,5 +1,5 @@
 body {
-	background-image: url('../images/bg.png');
+	background-image: url('../images/bg2.webp');
     background-position: 50%;
     background-size: 1090px;
     position: absolute;
@@ -19,7 +19,7 @@ body {
 }
 
 .dm-sans {
-    font-family: "DM Sans", sans-serif;
+    font-family: "Reddit Mono", monospace;
     font-optical-sizing: auto;
     font-weight: weight;
     font-style: normal;
