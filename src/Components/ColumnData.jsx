@@ -6,7 +6,7 @@ const columnData = [
     description2:
       "Cuenta con un sistema de votación y publicación inspirado en el sitio web Reddit, Ranking de publicaciones más populares, Comentarios en cada publicación, y Categorías de todos los productos.",
     description:
-      "El objetivo de esta página web es crear una plataforma en línea inclusiva y accesible para la comunidad de Tocopilla, que permita a usuarios individuales y PYMES vender sus productos de manera eficiente y segura. Nuestra meta es fomentar el crecimiento económico local al proporcionar una plataforma digital que conecte a compradores y vendedores, promoviendo así el comercio local y la colaboración entre la comunidad.",
+      "El objetivo de esta página web es crear una plataforma en línea inclusiva y accesible para la comunidad de Tocopilla, que permita a usuarios individuales y PYMES vender sus productos de manera eficiente y segura.",
     link: "https://ejemplo.com",
     link2: "https://github.com/MMirkonsio/piedra-papel-tijera",
     columnClass: "cursor-pointer",
@@ -27,11 +27,11 @@ const columnData = [
     imageUrl: "../images/noproject.webp",
     alt: "Imagen del proyecto 3",
     hasImage: true,
-    description: "Descripción de la imagen 3",
+    description: "Proyecto en curso...",
     columnClass: "cursor-pointer",
   },
   {
-    title: "ANALISTA PROGRAMADOR FULLSTACK",
+    title: "ANALISTA PROGRAMADOR FRONTEND",
     hasImage: false,
     columnClass: "text-6xl p-1 break-words lg:tracking-wide",
   },
@@ -39,7 +39,7 @@ const columnData = [
     imageUrl: "../images/noproject.webp",
     alt: "Imagen del proyecto 4",
     hasImage: true,
-    description: "Descripción de la imagen 4",
+    description: "Proyecto en curso...",
     columnClass: "cursor-pointer",
   },
   {

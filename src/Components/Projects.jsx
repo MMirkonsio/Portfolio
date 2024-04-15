@@ -55,16 +55,11 @@ const Projects = () => {
               {data.subtitle}
             </div>
             {data.hasImage && (
-              <div className="relative w-full h-full rounded-lg overflow-hidden">
+              <div className="relative w-full h-full rounded-lg">
                 <img
                   src={data.imageUrl}
                   alt={data.title}
-                  className="w-full h-full rounded-lg object-cover grayscale transition-all duration-300"
-                />
-                <img
-                  src={data.imageUrl}
-                  alt={data.title}
-                  className="absolute top-0 left-0 w-full h-full rounded-lg object-cover transition-all duration-300 opacity-0 hover:opacity-100"
+                  className=" w-full h-full rounded-lg object-cover"
                 />
               </div>
             )}

@@ -16,7 +16,7 @@ const Navbar = () => {
   return (
     <div className="index-navbar flex flex-row h-auto justify-between fixed items-center w-full px-4 py-2 text-neutral-700 dark:text-gray-100 border-b-2 border-slate-400/10 bg-neutral-100 dark:bg-neutral-900 mx-auto">
       <div className="flex flex-row justify-center items-center">
-        <h1 className="text-2xl font-bold italic">@Mirkovalencia</h1>
+        <h1 className="text-xl font-bold italic">@mirkovalencia</h1>
       </div>
       <div className="flex gap-4 items-center">
         <Linkedin title="Linkedin" />

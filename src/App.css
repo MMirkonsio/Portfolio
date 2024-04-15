@@ -110,7 +110,7 @@ body {
 .contenedor-model{
   width: 50%;
   display: flex;
-    flex-direction: row;
+  flex-direction: row;
 
 }
 
@@ -143,6 +143,7 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
+    
   }
 }
 
