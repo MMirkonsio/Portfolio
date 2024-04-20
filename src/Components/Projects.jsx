@@ -1,23 +1,22 @@
-import { Dialog } from "primereact/dialog";
-import { Button } from "primereact/button";
 import "../App.css";
 import { useState } from "react";
-import "primeicons/primeicons.css";
 import columnData from "../Components/ColumnData";
+import { MdOutlineFileDownload } from "react-icons/md";
 
 const Projects = () => {
-  const [activeDialogIndex, setActiveDialogIndex] = useState(null);
-  const [blurBackground, setBlurBackground] = useState(false);
-  
+  const [showModal, setShowModal] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
 
-  const openModal = (index) => {
-    setActiveDialogIndex(index);
-    setBlurBackground(true);
+  const openModal = (item) => {
+    if (item.open) {
+      setSelectedItem(item);
+      setShowModal(true);
+    }
   };
 
   const closeModal = () => {
-    setActiveDialogIndex(null);
-    setBlurBackground(false);
+    setSelectedItem(null);
+    setShowModal(false);
   };
 
   const handleDownloadPDF = () => {
@@ -26,119 +25,143 @@ const Projects = () => {
     link.download = "Curriculumvitae2024.pdf";
     link.click();
   };
-  
 
   return (
-    <div
-      className={`flex justify-center items-center ${
-        blurBackground ? "blur-background" : ""
-      }`}
-      style={{ marginTop: "calc(3.9rem + 1px)" }}
-    >
-      <div className="grid lg:auto-rows-[190px] auto-rows-[250px] contenedor-grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-2 p-4">
-        {columnData.map((data, i) => (
-          <div
-            key={i}
-            className={`project-container row-span-1 rounded-xl border-2 border-slate-400/10 bg-neutral-100 dark:bg-neutral-900 ${
-              i === 3 || i === 6 ? "lg:col-span-2 col-span-1 " : ""
-            } ${data.columnClass} ${
-              activeDialogIndex !== null && activeDialogIndex !== i
-                ? "hidden"
-                : ""
-            } ${data.hasImage ? "cursor-pointer" : ""}`}
-            onClick={() => data.hasImage && openModal(i)}
-          >
-            <h2 className="font-bold dark:text-gray-100 text-neutral-800">
-              {data.title}
-            </h2>
-            <div className="text-lg dark:text-gray-100 text-neutral-800">
-              {data.subtitle}
-            </div>
-            {data.hasImage && (
-              <div className="relative w-full h-full rounded-lg">
+    <div className="relative min-h-screen">
+      {showModal && selectedItem && (
+        <div
+          id="default-modal"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+        >
+          <div className="bg-neutral-900 text-gray-100 p-4 rounded-lg shadow-lg max-w-md w-full">
+            {selectedItem.hasImage && (
+              <div className="relative w-full h-64 mb-4">
                 <img
-                  src={data.imageUrl}
-                  alt={data.title}
-                  className=" w-full h-full rounded-lg object-cover"
+                  src={selectedItem.imageUrl}
+                  alt={selectedItem.alt}
+                  className="w-full h-full rounded-lg object-cover"
                 />
               </div>
             )}
-          </div>
-        ))}
-        {columnData.map(
-          (data, i) =>
-            data.hasImage && (
-              <Dialog
-                key={i}
-                visible={activeDialogIndex === i}
-                onHide={closeModal}
-                modal
-                showHeader={false}
-                className="dialog-modal"
-              >
-                <div className="contenedor-model mx-auto relative bg-gray-100 dark:bg-neutral-900  rounded-xl border-2 border-slate-400/20  dm-sans">
-                  {data.imageUrl && (
-                    <img
-                      src={data.imageUrl}
-                      alt={data.title}
-                      className="foto-model lg:rounded-l-lg  object-cover transition-all duration-300"
-                    />
-                  )}
-                  <div className=" dark:bg-neutral-900 lg:rounded-r-lg ">
-                    {data.title && (
-                      <h2 className="text-4xl font-bold ">{data.title}</h2>
-                    )}
-                    {data.description && (
-                      <div className="dark:bg-neutral-900 lg:rounded-r-lg">
-                        {data.title && (
-                          <h2 className="text-4xl font-bold">{data.title}</h2>
-                        )}
-                        <div className="text-base text-justify flex lg:h-4/5 dark:text-neutral-100 text-neutral-900 p-2">
-                          {data.description}
-                          <br />
-                          {data.description2}
-                          <br />
-                          {data.experience}
-                        </div>
+            <div>
+              {selectedItem.titlemodal && (
+                <h2 className="text-2xl font-bold mb-2">
+                  {selectedItem.titlemodal}
+                </h2>
+              )}
+
+              <div className="flex flex-wrap">
+                {selectedItem.icons &&
+                  Object.values(selectedItem.icons)
+                    .slice(0, 6)
+                    .map((icon, index) => (
+                      <div key={index} className="mr-2 mb-2">
+                        {icon}
                       </div>
-                    )}
+                    ))}
+              </div>
 
-                    <div className="flex items-center justify-center gap-20 mb-4 mt-4 dark:text-neutral-100 text-neutral-900">
-                      {data.link && (
-                        <Button
-                          icon="pi pi-external-link"
-                          className="text-2xl p-button-rounded p-button-text p-button-sm  p-2 "
-                          onClick={() => window.open(data.link, "_blank")}
-                        />
-                      )}
-                      {data.link2 && (
-                        <Button
-                          icon="pi pi-code"
-                          className="text-2xl p-button-rounded p-button-text p-button-sm  p-2 "
-                          onClick={() => window.open(data.link2, "_blank")}
-                        />
-                      )}
-                      {data.experience && (
-                        <Button
-                          className="p-button-text p-button-sm  block p-2 ml-2  bg-neutral-800 rounded-lg text-neutral-100 "
-                          onClick={() => handleDownloadPDF(columnData[0])}
-                        >
-                          <i className="pi pi-download mr-2"></i>
-                          <span>Descargar CV</span>
-                        </Button>
-                      )}
+              {selectedItem.titlemodal2 && (
+                <h2 className="text-2xl font-bold mb-2">
+                  {selectedItem.titlemodal2}
+                </h2>
+              )}
 
-                      <Button
-                        icon="pi pi-times"
-                        className="p-button-rounded p-button-text p-button-sm  p-2 text-2xl"
-                        onClick={closeModal}
-                      />
-                    </div>
-                  </div>
+              <div className="flex flex-wrap">
+                {selectedItem.icons &&
+                  Object.values(selectedItem.icons)
+                    .slice(6)
+                    .map((icon, index) => (
+                      <div key={index} className="mr-2 mb-2">
+                        {icon}
+                      </div>
+                    ))}
+              </div>
+
+              {selectedItem.description && (
+                <div className="text-base text-justify mb-4">
+                  {selectedItem.description}
+                  <br />
+                  {selectedItem.description2}
+                  <br />
+                  {selectedItem.experience}
                 </div>
-              </Dialog>
-            )
-        )}
+              )}
+              <div className="flex justify-end gap-4 items-center">
+                {selectedItem.link && (
+                  <a
+                    href={selectedItem.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-500 hover:underline font-bold"
+                  >
+                    Ver Página
+                  </a>
+                )}
+                {selectedItem.link2 && (
+                  <a
+                    href={selectedItem.link2}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-500 hover:underline font-bold"
+                  >
+                    Ver Código
+                  </a>
+                )}
+                {selectedItem.experience && (
+                  <button
+                    onClick={handleDownloadPDF}
+                    className="text-blue-500 hover:underline font-bold flex items-center gap-1"
+                  >
+                    <MdOutlineFileDownload className="h-6 w-6" />
+                    Download CV
+                  </button>
+                )}
+                {/* Botón "Close modal" */}
+                <button
+                  onClick={closeModal}
+                  className="bg-neutral-900 text-white font-bold p-2 rounded-md shadow-sm hover:bg-neutral-800"
+                  data-modal-hide="default-modal"
+                >
+                  Cerrar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+      <div className="flex justify-center items-center min-h-screen">
+        <div className="grid auto-rows-[200px] contenedor-grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-2">
+          {columnData.map((data, i) => (
+            <button
+              key={i}
+              className={`project-container row-span-1 rounded-xl border-2 border-slate-400/10 bg-neutral-900 ${
+                i === 3 || i === 6 ? "lg:col-span-2 col-span-1" : ""
+              } ${data.columnClass} ${data.open ? "cursor-pointer" : ""}`}
+              onClick={() => openModal(data)}
+              style={{ position: "relative" }} // Agrega posición relativa al contenedor de botón
+            >
+              {data.title && (
+                <h2 className="font-bold text-gray-100">{data.title}</h2>
+              )}
+              <h2 className="font-bold text-gray-100">
+                {data.titleTec}
+              </h2>
+              {data.subtitle && (
+              <div className="text-lg text-gray-100">{data.subtitle}</div>
+              )}
+              {data.hasImage && (
+                <div className="relative w-full h-full rounded-lg">
+                  <img
+                    src={data.imageUrl}
+                    alt={data.title}
+                    className="w-full h-full rounded-lg object-cover"
+                  />
+                </div>
+              )}
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   );
