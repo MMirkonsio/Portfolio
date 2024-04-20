@@ -1,12 +1,13 @@
-import { FaReact, FaHtml5, FaBootstrap, FaPhp, FaAws } from "react-icons/fa";
+import { SiPhp } from "react-icons/si";
 import {
   SiDjango,
   SiExpress,
-  SiTailwindcss,
-  SiMongodb,
   SiMysql,
 } from "react-icons/si";
 import { RiJavascriptFill } from "react-icons/ri";
+import { BiLogoReact, BiLogoHtml5, BiLogoBootstrap,BiLogoTailwindCss, BiLogoAws, BiLogoMongodb } from "react-icons/bi";
+
+
 
 const columnData = [
   {
@@ -22,6 +23,50 @@ const columnData = [
     link: "https://ejemplo.com",
     link2: "https://github.com/MMirkonsio/piedra-papel-tijera",
     columnClass: "cursor-pointer",
+    icons: {
+      icon1: (
+        <BiLogoReact 
+          className="w-14 h-14  hover:scale-110 transition-transform text-blue-400"
+          title="ReactJS"
+          style={{
+            color: "#00eeff",
+          }}
+        />
+      ),
+      icon5: (
+        <BiLogoTailwindCss
+          className="w-14 h-14 hover:scale-110 transition-transform"
+          title="Tailwind CSS"
+          style={{
+            color: "#44dff3",
+          }}
+        />
+      ),
+      icon6: (
+        <RiJavascriptFill
+          className="w-14 h-14 hover:scale-110 transition-transform"
+          title="JavaScript"
+          style={{
+            color: "#FFD600",
+          }}
+        />
+      ),
+      icon8: (
+        <SiExpress
+          className="w-14 h-14 hover:scale-110 transition-transform"
+          title="Express.js"
+        />
+      ),
+      icon10: (
+        <SiMysql
+          className="w-14 h-14 hover:scale-110 transition-transform"
+          title="MySQL"
+          style={{
+            color: "#0074a3",
+          }}
+        />
+      ),
+    },
   },
   {
     open: true,
@@ -36,6 +81,35 @@ const columnData = [
     link: "https://piedra-papel-tijera-gh11.vercel.app/",
     link2: "https://github.com/MMirkonsio/piedra-papel-tijera",
     columnClass: "cursor-pointer",
+    icons: {
+      icon1: (
+        <BiLogoReact 
+          className="w-14 h-14  hover:scale-110 transition-transform text-blue-400"
+          title="ReactJS"
+          style={{
+            color: "#00eeff",
+          }}
+        />
+      ),
+      icon5: (
+        <BiLogoTailwindCss
+          className="w-14 h-14 hover:scale-110 transition-transform"
+          title="Tailwind CSS"
+          style={{
+            color: "#44dff3",
+          }}
+        />
+      ),
+      icon6: (
+        <RiJavascriptFill
+          className="w-14 h-14 hover:scale-110 transition-transform"
+          title="JavaScript"
+          style={{
+            color: "#FFD600",
+          }}
+        />
+      ),
+    },
   },
   {
     open: true,
@@ -81,69 +155,97 @@ const columnData = [
     columnClass: "lg:text-7xl md:text-6xl text-5xl  break-words tracking-wide",
     icons: {
       icon1: (
-        <FaReact
-          className="w-20 h-20 mr-2 hover:scale-110 transition-transform"
+        <BiLogoReact 
+          className="w-20 h-20  hover:scale-110 transition-transform text-blue-400"
           title="ReactJS"
+          style={{
+            color: "#00eeff",
+          }}
         />
       ),
       icon2: (
-        <FaHtml5
-          className="w-20 h-20 mr-2 hover:scale-110 transition-transform"
+        <BiLogoHtml5
+          className="w-20 h-20 hover:scale-110 transition-transform"
           title="HTML5"
+          style={{
+            color: "#ff5900",
+          }}
         />
       ),
       icon3: (
         <SiDjango
-          className="w-20 h-20 mr-2 hover:scale-110 transition-transform"
+          className="w-20 h-20 hover:scale-110 transition-transform"
           title="Django"
         />
       ),
       icon4: (
-        <FaBootstrap
-          className="w-20 h-20 mr-2 hover:scale-110 transition-transform"
+        <BiLogoBootstrap
+          className="w-20 h-20 hover:scale-110 transition-transform"
           title="Bootstrap"
+          style={{
+            color: "#8a32d2",
+            
+          }}
         />
       ),
       icon5: (
-        <SiTailwindcss
-          className="w-20 h-20 mr-2 hover:scale-110 transition-transform"
+        <BiLogoTailwindCss
+          className="w-20 h-20 hover:scale-110 transition-transform"
           title="Tailwind CSS"
+          style={{
+            color: "#44dff3",
+          }}
         />
       ),
       icon6: (
         <RiJavascriptFill
-          className="w-20 h-20 mr-2 hover:scale-110 transition-transform"
+          className="w-20 h-20 hover:scale-110 transition-transform"
           title="JavaScript"
+          style={{
+            color: "#FFD600",
+          }}
         />
       ),
       icon7: (
-        <FaPhp
-          className="w-20 h-20 mr-2 hover:scale-110 transition-transform"
+        <SiPhp
+          className="w-20 h-20 hover:scale-110 transition-transform"
           title="PHP"
+          style={{
+            color: "#7a86b8",
+          }}
         />
       ),
       icon8: (
         <SiExpress
-          className="w-20 h-20 mr-2 hover:scale-110 transition-transform"
+          className="w-20 h-20 ml-4 hover:scale-110 transition-transform"
           title="Express.js"
         />
       ),
       icon9: (
-        <SiMongodb
-          className="w-20 h-20 mr-2 hover:scale-110 transition-transform"
+        <BiLogoMongodb 
+          className="w-20 h-20 hover:scale-110 transition-transform"
           title="MongoDB"
+          style={{
+            color: "#40be37",
+          }}
         />
       ),
       icon10: (
         <SiMysql
-          className="w-20 h-20 mr-2 hover:scale-110 transition-transform"
+          className="w-20 h-20 hover:scale-110 transition-transform"
           title="MySQL"
+          style={{
+            color: "#0074a3",
+          }}
         />
       ),
       icon11: (
-        <FaAws
-          className="w-20 h-20 mr-2 hover:scale-110 transition-transform"
+        <BiLogoAws
+          className="w-20 h-20 hover:scale-110 transition-transform"
           title="AWS"
+          style={{
+            color: "#ffbb00",
+          }}
         />
       ),
     },

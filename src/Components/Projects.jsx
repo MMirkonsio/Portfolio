@@ -49,16 +49,21 @@ const Projects = () => {
                   {selectedItem.titlemodal}
                 </h2>
               )}
+              {selectedItem.description && (
+                <div className="text-base text-justify mb-2">
+                  {selectedItem.description}
+                  <br />
+                  {selectedItem.description2}
+                  <br />
+                  {selectedItem.experience}
+                </div>
+              )}
 
-              <div className="flex flex-wrap">
+              <div className="flex flex-wrap justify-center gap-4">
                 {selectedItem.icons &&
                   Object.values(selectedItem.icons)
                     .slice(0, 6)
-                    .map((icon, index) => (
-                      <div key={index} className="mr-2 mb-2">
-                        {icon}
-                      </div>
-                    ))}
+                    .map((icon, index) => <div key={index}>{icon}</div>)}
               </div>
 
               {selectedItem.titlemodal2 && (
@@ -67,26 +72,13 @@ const Projects = () => {
                 </h2>
               )}
 
-              <div className="flex flex-wrap">
+              <div className="flex flex-wrap justify-center gap-4">
                 {selectedItem.icons &&
                   Object.values(selectedItem.icons)
                     .slice(6)
-                    .map((icon, index) => (
-                      <div key={index} className="mr-2 mb-2">
-                        {icon}
-                      </div>
-                    ))}
+                    .map((icon, index) => <div key={index}>{icon}</div>)}
               </div>
 
-              {selectedItem.description && (
-                <div className="text-base text-justify mb-4">
-                  {selectedItem.description}
-                  <br />
-                  {selectedItem.description2}
-                  <br />
-                  {selectedItem.experience}
-                </div>
-              )}
               <div className="flex justify-end gap-4 items-center">
                 {selectedItem.link && (
                   <a
@@ -144,11 +136,9 @@ const Projects = () => {
               {data.title && (
                 <h2 className="font-bold text-gray-100">{data.title}</h2>
               )}
-              <h2 className="font-bold text-gray-100">
-                {data.titleTec}
-              </h2>
+              <h2 className="font-bold text-gray-100">{data.titleTec}</h2>
               {data.subtitle && (
-              <div className="text-lg text-gray-100">{data.subtitle}</div>
+                <div className="text-lg text-gray-100">{data.subtitle}</div>
               )}
               {data.hasImage && (
                 <div className="relative w-full h-full rounded-lg">
