@@ -130,8 +130,8 @@ const Projects = () => {
           </div>
         </div>
       )}
-      <div className="flex justify-center items-center min-h-screen">
-        <div className="grid auto-rows-[200px] contenedor-grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-2">
+      <div className="flex justify-center items-center min-h-screen ">
+        <div className="grid auto-rows-[200px] contenedor-grid lg:mt-0 mb-8 mt-8 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-2">
           {columnData.map((data, i) => (
             <button
               key={i}

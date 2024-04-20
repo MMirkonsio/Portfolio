@@ -48,7 +48,7 @@ const columnData = [
   {
     open: false,
     title: "ANALISTA PROGRAMADOR",
-    columnClass: "text-6xl p-1 break-words lg:tracking-wide",
+    columnClass: "lg:text-7xl md:text-6xl text-5xl p-1 break-words lg:tracking-wide",
   },
   {
     open: true,
@@ -78,7 +78,7 @@ const columnData = [
     titlemodal: "FRONTEND",
     titlemodal2: "BACKEND",
     titleTec: "TECNOLOGÍAS",
-    columnClass: "lg:text-7xl text-6xl  break-words lg:tracking-wide",
+    columnClass: "lg:text-7xl md:text-6xl text-5xl  break-words tracking-wide",
     icons: {
       icon1: (
         <FaReact
